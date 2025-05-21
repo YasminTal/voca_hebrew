@@ -1,0 +1,13 @@
+
+
+FILE_PATH_CONST=("C:/Users/talts/Yasmin/bash/python/voca_hebrew/vocab_hebrew.json")
+NAME = "TestApp"
+
+#BOTO
+AWS_CREDS="[default]\naws_access_key_id=ASIA3VECFFIS7V5OMBZZ\naws_secret_access_key=in9cB6j656z3ynr0vq4Hh9ZMWlvqAcLz8v8MdxAm\naws_session_token=IQoJb3JpZ2luX2VjEO3//////////wEaCXVzLXdlc3QtMiJHMEUCIA0R/p2aPbG5abTY+Ic6sBQCVvPhqV9eRHUHjWWJorHpAiEArXf5KDMB8hhcZjgXP3AsII0eNvG/Nut+ITkFOVefnsYqtwIIpv//////////ARACGgw4MDEyODQzNjg5MzMiDPq5ZtRUYnBSj5dkCCqLAtuCHuDf+JcF2blYqG7HUDYL79FDnKOwD1ntt0Y2QHjLfvVDMplvR7DHBNRzr1OTxXJIPlSwLRwGRQKEmI5cGdWybL+2RqDFuy6Arsh31jHUBuUHJjDMdAONPE2sHK1hrkzsUclLdqrySlUMtYF+cHfsIidEVjnIU/PMw8/2aToHD2tukG8kC8TtKivzo0XS7i7zyYa5JhejmvpKpWnO5fd79Jd3kg4vIQcgX2BHfsbX0ur9NvRfpdST0cq5IssSxEk5KCp8APoruUQpgoh9Xtga05d5cL5IcBVHDBWKvbH5XlQPj0FDaymM+xW5QC98cfBCTFyaK0cBT+ta5+bMYi9rh0lgqIXgFlABWTDO/LHBBjqdAR5DyNeUR7xL8KW44heqrk0Hs2YMnaOJoh3BTZSBc/u6wfw4/r+jrClxZwVQDR6rg5INBm4tjIwPal81FG8u8DZPPryVPipHtp22k9e7dxecrU75VbMk4iTLH9AMDP57bHTZuUB5Se/B93iBRjFJ4Ikn8qDVJd6Ud8fy0ndo9AqBjJtj4DZYkLurwIQF7QtoWVwqKERrLgSootYB2uk="
+BUCKET_NAME="VOCAB-heb"
+REGION="us-west-2"
+
+
+# For tests only
+TEST_FILE_PATH_CONST = "test_vocab.json"
