@@ -8,13 +8,9 @@ REGION=constants.REGION
     
 
 
+# cli credentials 
 def overwrite_aws_credentials(AWS_CREDS: str):
-    """
-    Overwrites the ~/.aws/credentials file with the provided AWS_CREDS string.
     
-    Parameters:
-        AWS_CREDS (str): The new credentials content to be written to the file.
-    """
     aws_credentials_path = os.path.expanduser("~/.aws/credentials")
 
     # Ensure the .aws directory exists
@@ -33,12 +29,31 @@ def create_s3_client(REGION):
     print(f"{s3_client} created successfully.")
     return s3_client
 
-def create_bucket(s3_client,BUCKET_NAME,REGION):
-    s3_client.create_bucket(
-    Bucket=BUCKET_NAME,
-    CreateBucketConfiguration={'LocationConstraint': REGION}
-    )
-    print (f"{s3_client} created successfully.")
+def bucket_exists(s3_client, BUCKET_NAME):
+    try:
+        response = s3_client.list_buckets()
+        for bucket in response['Buckets']:
+            if bucket['Name'] == BUCKET_NAME:
+                return True
+        return False
+    except Exception as e:
+        print(f"Error checking bucket existence: {e}")
+        return False
+
+def create_bucket(s3_client, BUCKET_NAME, REGION):
+    if bucket_exists(s3_client, BUCKET_NAME):
+        print(f"Bucket '{BUCKET_NAME}' already exists. Skipping creation.")
+        return
+
+    try:
+        s3_client.create_bucket(
+            Bucket=BUCKET_NAME,
+            CreateBucketConfiguration={'LocationConstraint': REGION}
+        )
+        print(f"Bucket '{BUCKET_NAME}' created successfully.")
+    except Exception as e:
+        print(f"Failed to create bucket: {e}")
+
 
 if __name__ == "__main__":
 
